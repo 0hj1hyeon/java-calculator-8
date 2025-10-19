@@ -26,7 +26,11 @@ public class DelimiterManager {
         if (matcher.find()) {
             String customDelimiter = matcher.group(1);
             currentDelimiters.clear();
-            currentDelimiters.add(Pattern.quote(customDelimiter));
+
+            for (char delimiterChar : customDelimiter.toCharArray()) {
+                currentDelimiters.add(String.valueOf(delimiterChar));
+            }
+
             return matcher.group(2);
         }
         return input;
