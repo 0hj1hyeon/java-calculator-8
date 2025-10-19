@@ -21,6 +21,7 @@ public class DelimiterManager {
 
 
     private String extractAndSetCustomDelimiter(String input) {
+        input = input.replace("\\n", "\n");
         Matcher matcher = CUSTOM_DELIMITER_PATTERN.matcher(input);
 
         if (matcher.find()) {
