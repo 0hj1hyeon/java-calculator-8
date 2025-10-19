@@ -3,6 +3,12 @@ package calculator.domain;
 public class Validator {
     private Validator() {}
 
+    public static void validateFullInput(String input) {
+        if (input == null || input.isEmpty()) {
+            throw new IllegalArgumentException("입력 문자열이 비어있거나 올바르지 않은 형식입니다.");
+        }
+    }
+
     public static int parseAndValidateNumber(String numberText) {
 
         if (numberText == null || numberText.isBlank()) {
